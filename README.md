@@ -1,1 +1,2 @@
-# mapi
+# shipped-utils
+Marathon Rest API Utility
