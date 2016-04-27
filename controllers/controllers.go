@@ -50,6 +50,7 @@ func NewMarathonClient() (client *f.Client, err error) {
 func ServeJsonResponseWithCode(w http.ResponseWriter, responseBodyObj interface{}, code int) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("X-Content-Type-Options", "nosniff")
+	w.Header().Set("Access-Control-Allow-Origin","*")
 	w.WriteHeader(code)
 	if err := json.NewEncoder(w).Encode(responseBodyObj); err != nil {
 		fmt.Println("Error: ", err.Error())
