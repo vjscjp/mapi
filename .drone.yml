@@ -3,16 +3,16 @@ git:
   path: github.com/vjscjp/mapi
 script:
   - echo "build commands"
-  - .shipped/build
-  - .shipped/test
+  - echo "no build command"
+  - echo "no test command"
 clone:
   path: github.com/vjscjp/mapi
 build:
   image: golang:1.5
   commands:
     - echo "build commands"
-    - .shipped/build
-    - .shipped/test
+    - echo "no build command"
+    - echo "no test command"
 publish:
   docker:
     file: ./Dockerfile
@@ -29,6 +29,6 @@ notify:
   webhook:
     image: shippedrepos-docker-drone.bintray.io/drone-webhook
     urls:
-      - "http://shipped-api.tx3.shipped-cisco.com/webhooks/drone"
+      - "https://api.ciscoshipped.io/webhooks/drone"
     on_success: true
     on_failure: true
